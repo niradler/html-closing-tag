@@ -39,7 +39,24 @@
         return str;
       }
       function addClosingTags(htmlString) {
-        const selfClosingTags = ["meta", "br", "img"];
+        const selfClosingTags = [
+          "area",
+          "base",
+          "br",
+          "col",
+          "command",
+          "embed",
+          "hr",
+          "img",
+          "input",
+          "keygen",
+          "link",
+          "meta",
+          "param",
+          "source",
+          "track",
+          "wbr",
+        ];
         const regexPattern = new RegExp(
           `<(\\b${selfClosingTags.join("\\b|\\b")})\\b([^>]*)\\s*>`,
           "gi"

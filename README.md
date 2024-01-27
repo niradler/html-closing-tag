@@ -45,6 +45,29 @@ Output:
 
 Visit the [HTML Closing Tag Converter](https://niradler.github.io/html-closing-tag/public/) and streamline your HTML code for React JSX or other templating languages.
 
+## Example
+
+![HTML Closing Tag Converter](screenshot.png)
+
+## List of Common Self-Closing HTML Tags
+
+- `area`
+- `base`
+- `br`
+- `col`
+- `command`
+- `embed`
+- `hr`
+- `img`
+- `input`
+- `keygen`
+- `link`
+- `meta`
+- `param`
+- `source`
+- `track`
+- `wbr`
+
 ## Contributions
 
 Contributions and feedback are welcome! If you encounter any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request.
