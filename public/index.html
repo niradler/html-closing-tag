@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Tag Converter</title>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        margin: 0;
+      }
+      textarea {
+        flex: 1;
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      button {
+        height: 100%;
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="leftTextarea" placeholder="Paste HTML code here"></textarea>
+    <button onclick="convertHtml()">Convert</button>
+    <textarea
+      id="rightTextarea"
+      placeholder="Converted HTML will appear here"
+    ></textarea>
+
+    <script>
+      function trimLastSpace(str) {
+        if (str.endsWith(" ")) {
+          return str.slice(0, -1);
+        }
+        return str;
+      }
+      function addClosingTags(htmlString) {
+        const selfClosingTags = ["meta", "br", "img"];
+        const regexPattern = new RegExp(
+          `<(\\b${selfClosingTags.join("\\b|\\b")})\\b([^>]*)\\s*>`,
+          "gi"
+        );
+        const fixedHtml = htmlString.replace(
+          regexPattern,
+          function (match, tagName, attributes) {
+            return match.endsWith("/>")
+              ? match
+              : `<${tagName}${trimLastSpace(attributes)} />`;
+          }
+        );
+
+        return fixedHtml;
+      }
+      function convertHtml() {
+        const leftTextarea = document.getElementById("leftTextarea");
+        const rightTextarea = document.getElementById("rightTextarea");
+
+        const inputHtml = leftTextarea.value;
+        const convertedHtml = addClosingTags(inputHtml);
+
+        rightTextarea.value = convertedHtml;
+      }
+    </script>
+  </body>
+</html>
