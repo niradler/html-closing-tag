@@ -47,7 +47,7 @@ Visit the [HTML Closing Tag Converter](https://niradler.github.io/html-closing-t
 
 ## Example
 
-![HTML Closing Tag Converter](screenshot.png)
+![HTML Closing Tag Converter](Screenshot.png)
 
 ## List of Common Self-Closing HTML Tags
 
